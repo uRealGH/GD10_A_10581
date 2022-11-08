@@ -3,7 +3,10 @@ package com.example.gd10_a_10581
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gd10_a_10581.databinding.ActivityFormAddMahasiswaBinding
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,8 +39,7 @@ class FormAddMahasiswaActivity : AppCompatActivity() {
             val prodi = txtProdi.text.toString()
             val lahir = tglView.text.toString()
 
-            RClient.instances.createData(nobp,nama,alamat,prodi,lahir).enqueu
-            e(object : Callback<ResponseCreate> {
+            RClient.instances.createData(nobp,nama,alamat,prodi,lahir).enqueue(object : Callback<ResponseCreate> {
                 override fun onResponse(
                     call: Call<ResponseCreate>,
                     response: Response<ResponseCreate>

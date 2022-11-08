@@ -1,8 +1,11 @@
 package com.example.gd10_a_10581
 
 import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gd10_a_10581.databinding.ListDataMahasiswaBinding
 
 class MahasiswaAdapter (
     private val listMahasiswa:ArrayList<MahasiswaData>,
@@ -10,8 +13,7 @@ class MahasiswaAdapter (
 
 ): RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder>() {
     inner class
-    MahasiswaViewHolder(item:ListDataMahasiswaBinding):RecyclerView.V
-    iewHolder(item.root){
+    MahasiswaViewHolder(item: ListDataMahasiswaBinding):RecyclerView.ViewHolder(item.root){
         private val binding = item
         fun bind(mahasiswaData: MahasiswaData){
             with(binding) {
@@ -29,9 +31,8 @@ class MahasiswaAdapter (
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType:
     Int): MahasiswaViewHolder {
-        return
-        MahasiswaViewHolder(ListDataMahasiswaBinding.inflate(LayoutInflat
-                er.from(parent.context),
+        return MahasiswaViewHolder(ListDataMahasiswaBinding.inflate(
+            LayoutInflater.from(parent.context),
             parent,false
         ))
     }

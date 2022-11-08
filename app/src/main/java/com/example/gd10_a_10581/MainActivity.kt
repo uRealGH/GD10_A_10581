@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import com.example.gd10_a_10581.databinding.ActivityMainBinding
+import com.example.gd10_a_10581.fragment.DataMahasiswaFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val mFragmentManager = supportFragmentManager
         val mFragmentTransaction =
             mFragmentManager.beginTransaction()
-        val mFragment = fragment.DataMahasiswaFragment()
+        val mFragment = DataMahasiswaFragment()
         val textCari = binding.txtCari.text
         val mBundle = Bundle()
         mBundle.putString("cari", textCari.toString())

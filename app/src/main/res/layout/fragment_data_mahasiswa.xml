@@ -29,4 +29,5 @@
                     android:layout_gravity="center_vertical|center_horizontal"/>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.c
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

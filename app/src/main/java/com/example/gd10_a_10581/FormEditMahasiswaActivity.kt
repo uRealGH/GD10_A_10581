@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gd10_a_10581.databinding.ActivityFormEditMahasiswaBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -40,8 +42,7 @@ class FormEditMahasiswaActivity : AppCompatActivity() {
                 val prodi = txtEditProdi.text.toString()
                 val tgllahir = tglEditView.text.toString()
 
-                RClient.instances.updateData(nim,nama,alamat,prodi,tgllahir).enqu
-                eue(object : Callback<ResponseCreate> {
+                RClient.instances.updateData(nim,nama,alamat,prodi,tgllahir).enqueue(object : Callback<ResponseCreate> {
                     override fun onResponse(
                         call: Call<ResponseCreate>,
                         response: Response<ResponseCreate>
